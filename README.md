@@ -27,9 +27,14 @@ When an agent needs a developer tool, it should:
 1. **Search** the UseAgents registry with the task and stack constraints
 2. **Shortlist** candidates from returned metadata
 3. **Fetch context** (install steps, examples, docs link) for the chosen tool
-4. **Implement** from that context and official docs — never invent package names or setup from training data when context is missing
+4. **Search docs** for deeper how-to answers from the tool's official documentation
+5. **Implement** from that context and official docs — never invent package names or setup from training data when context is missing
 
 Connect UseAgents over [MCP](https://docs.useagents.site/mcp/connecting), the [CLI](https://docs.useagents.site/agents/cli), or the [REST API](https://docs.useagents.site/api-reference/introduction). The skill directs the workflow; MCP/CLI/API are how the agent talks to the registry.
+
+## Agent Plugin
+
+For a bundled MCP + skill package conforming to [Agent Plugins 1.0.0](https://agent-plugins.org), see [useagentsai/agent-plugin](https://github.com/useagentsai/agent-plugin).
 
 ## Skills in this repo
 

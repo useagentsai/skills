@@ -38,6 +38,26 @@ useagents context resend -l typescript-javascript -t api
 
 Call `context` for the chosen slug after shortlisting search results. Context includes description, install steps, examples, and docs links.
 
+## Docs
+
+Search a tool's official documentation with a natural-language question:
+
+```bash
+useagents docs resend "how do I send attachments"
+useagents docs stripe "configure webhook signature verification"
+useagents docs resend "attachments" --format toon
+```
+
+Call `docs` after `context` when you need deeper how-to answers from official documentation.
+
+## Recommended workflow
+
+1. `useagents search "<task>"` — find candidate tools
+2. Shortlist by slug and metadata
+3. `useagents context <slug>` — install and quickstart context
+4. `useagents docs <slug> "<question>"` — deeper docs answers when needed
+5. Implement from context and docs
+
 ## Environment
 
 - `USEAGENTS_API_URL` — override API base (default production API)
