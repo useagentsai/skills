@@ -50,6 +50,23 @@ useagents docs resend "attachments" --format toon
 
 Call `docs` after `context` when you need deeper how-to answers from official documentation.
 
+## Test
+
+Smoke-test a snippet in a UseAgents sandbox (not on the local machine). The CLI POSTs to `/tools/test` and exits `1` when `ok` is false.
+
+```bash
+useagents test \
+  --runtime node \
+  --language typescript \
+  --package resend \
+  --file src/index.ts \
+  --slug resend
+```
+
+`--file` is relative to the current directory and may be repeated. `--package` and `--env NAME=value` are also repeatable. The sandbox allows outbound network so live vendor API calls can run; pass keys with `--env`. JavaScript and TypeScript (`--runtime node`) use the Bun runtime to add packages and run files. Reuse a previous sandbox with the `sessionId` from the last result. The box is paused between runs and has no hard TTL.
+
+Call `test` after `context` (and `docs` when needed) when you have written a small program and want to know if it installs and runs.
+
 ## Recommended workflow
 
 1. `useagents search "<task>"` — find candidate tools
@@ -57,6 +74,7 @@ Call `docs` after `context` when you need deeper how-to answers from official do
 3. `useagents context <slug>` — install and quickstart context
 4. `useagents docs <slug> "<question>"` — deeper docs answers when needed
 5. Implement from context and docs
+6. `useagents test` — sandbox smoke test when you want to confirm the snippet runs
 
 ## Environment
 
