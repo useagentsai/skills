@@ -29,6 +29,7 @@ When an agent needs a developer tool, it should:
 3. **Fetch context** (install steps, examples, docs link) for the chosen tool
 4. **Search docs** for deeper how-to answers from the tool's official documentation
 5. **Implement** from that context and official docs — never invent package names or setup from training data when context is missing
+6. **Test** a small snippet in a UseAgents sandbox (`test_tool` / `useagents test` / `POST /tools/test`) when you want to confirm the packages install and the code runs — not on the user's machine
 
 Connect UseAgents over [MCP](https://docs.useagents.site/mcp/connecting), the [CLI](https://docs.useagents.site/agents/cli), or the [REST API](https://docs.useagents.site/api-reference/introduction). The skill directs the workflow; MCP/CLI/API are how the agent talks to the registry.
 
@@ -40,7 +41,7 @@ For a bundled MCP + skill package conforming to [Agent Plugins 1.0.0](https://ag
 
 | Skill | Description |
 | ----- | ----------- |
-| [`useagents`](./useagents/) | Discover tools via UseAgents before recommending packages or writing install/usage code |
+| [`useagents`](./useagents/) | Discover tools via UseAgents, search official docs, and smoke-test snippets in a sandbox |
 
 ## Docs
 
